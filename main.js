@@ -1,4 +1,14 @@
-const todoList = JSON.parse(localStorage.getItem("todoList"));
+const todoList = [
+  {
+    name: "Do laundry",
+    dueDate: "2024-01-14",
+  },
+  {
+    name: "Code",
+    dueDate: "2024-01-15",
+  },
+];
+//JSON.parse(localStorage.getItem("todoList"));
 
 let btn = document.querySelector(".add_btn");
 let inputElement = document.querySelector(".js-name-input");
@@ -8,13 +18,13 @@ renderToDoList();
 
 btn.addEventListener("click", (event) => {
   addToDo();
-  localStorage.setItem("todoList", JSON.stringify(todoList));
+  //localStorage.setItem("todoList", JSON.stringify(todoList));
 });
 
 inputElement.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     addToDo();
-    localStorage.setItem("todoList", JSON.stringify(todoList));
+    //localStorage.setItem("todoList", JSON.stringify(todoList));
   }
 });
 
@@ -48,5 +58,5 @@ function renderToDoList() {
   }
 
   document.querySelector(".js-todo-list").innerHTML = todoListHTML;
-  localStorage.setItem("todoList", JSON.stringify(todoList));
+  //localStorage.setItem("todoList", JSON.stringify(todoList));
 }
